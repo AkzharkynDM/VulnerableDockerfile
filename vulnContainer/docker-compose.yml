@@ -6,6 +6,7 @@ services:
       context: .
     image: samplant10/unidocker:php
     restart: always
+    user: root
     volumes:
       - "./UniVulnerableWebsite/:/var/www/html/"
     ports:
@@ -26,6 +27,7 @@ services:
     build:
       dockerfile: vulnerableCont.dockerfile
       context: .
+    user: root  
     image: samplant10/unidocker:vulncont
     restart: on-failure
     ports:
